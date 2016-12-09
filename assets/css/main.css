@@ -6,6 +6,40 @@ body {
 .board-container {
   margin: 20px auto;
   height: 500px;
-  width: 300px;
-  background-color: pink;
+  width: 100px;
+  background-color: black;
+}
+.column-one {
+  /*height: 100px;
+  width: 100px;*/
+}
+#one {
+  background-color: black;
+  border: 1px solid grey;
+  height: 99px;
+  width: 99px;
+}
+#two {
+  background-color: black;
+  border: 1px solid grey;
+  height: 99px;
+  width: 99px;
+}
+#three {
+  background-color: black;
+  border: 1px solid grey;
+  height: 99px;
+  width: 99px;
+}
+#four {
+  background-color: black;
+  border: 1px solid grey;
+  height: 99px;
+  width: 99px;
+}
+#five {
+  background-color: black;
+  border: 1px solid grey;
+  height: 99px;
+  width: 99px;
 }
