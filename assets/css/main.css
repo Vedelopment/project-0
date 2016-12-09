@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(70, 252, 249);
+  text-align: center;
+
+}
+.board-container {
+  margin: 20px auto;
+  height: 500px;
+  width: 300px;
+  background-color: pink;
+}
