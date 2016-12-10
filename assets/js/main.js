@@ -7,86 +7,72 @@ var boardGrid = [
   [$('#num4')],
   [$('#num5')],
 ]
+
 var r = 0;
-var box;
+var num = "num";
+var indexValue = r;
 var limit = 0;
-//var currentBox = boardGrid[r][0];
-var boardBottom = boardGrid[4][0];
-var boxStatus = 0;
+// var currentBox = boardGrid[r][0];
+// var boardBottom = boardGrid[4][0];
 var timerDrop = 0;
 var timerEmpty = 700;
+var timerIncrement = 0;
 
-function help(e) {
-  result = e+1;
-  return result;
-  console.log('help is coming!');
-}
-
-function addRowNum(i) {
-  console.log(dropInit);
-  result = boardGrid[i+1][0];
-  console.log(result);
-}
+// var str1 = "Hello";
+// var str2 = 1;
+// var res = str1.concat(str2);
+// undefined
+// res
+// "Hello1"
 
 function boxDrop() {
-    //$("#num1").css("background-color","rgb(250, 0, 0)");
-    num1.classList.add("active");
+    var box = num.concat(r);
+    $(box).css("background-color","rgb(250, 0, 0)");
     console.log("box drop");
+    console.log(box);
 }
-
-function boxEmpty() {
-    //myVar = setTimeout(
-            //function boxEmpty() {
-            //$("#num1").css("background-color","rgb(0, 0, 0)");
-            num1.classList.remove("active");
-            console.log("box empty");
-            //}
-          //, 700);
+function boxEmpty(box) {
+    var box = num.concat(r);
+    $(box).css("background-color","rgb(0, 0, 0)");
+    console.log("box empty");
+    console.log(box);
 }
 function boxLoop() {
-  while (/*boxBelow==false || */boxStatus<5) {
-    currentBox = boardGrid[r][0];
-    limit = 0;
-    l = 0;
-    if (currentBox!==boardBottom) {
-      setTimeout(function(){
-        boxDrop();
-      }, timerDrop);
-      setTimeout(function(){
-        boxEmpty();
-      }, timerEmpty);
-        l = l + 1;
-        r = r+1;
-        timerDrop = timerDrop + 1400;
-        timerEmpty = timerEmpty + 1400;
-        //currentBox = currentBox[r+1][0];
-        console.log(r);
-    } else {
-      setTimeout(function(){
-        console.log('check bottom of board!');
-      }, timerDrop);
-      return;
+      boxEmpty();
+      boxDrop();
+}
+function boxDelay() {
+  while (limit<5) {
+    box = num.concat(r);
+    limit = limit + 1;
+    setTimeout(function() {
+      boxLoop();
+      r = r + 1;
     }
+      , timerIncrement);
+    timerIncrement = timerIncrement + 700;
   }
 }
-// function playLoop() {
-//     if (r%5=0 && limit<50){
-//     currentBox = boardGrid[+1][0];
-//     currentBox = boardGrid[r][0];
-//     boxLoop();
-//   } else {
-//     console.log(l);
-//     return
-//   }
-// }
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+function clickSanity() {
+  console.log('click sanity');
+}
 
 $(document).on("ready", function() {
 
 
-  start.addEventListener("click", boxLoop);
+  start.addEventListener("click", boxDelay);
 
 
 })
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
 
       ///////////////////////   BOX ONE   /////////////////////////////
       // function boxOneDrop() {
