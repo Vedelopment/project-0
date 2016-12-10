@@ -8,34 +8,24 @@ var boardGrid = [
   [$('#num5')],
 ]
 
-var r = 0;
+var r = -1;
 var num = "num";
-var indexValue = r;
 var limit = 0;
 // var currentBox = boardGrid[r][0];
 // var boardBottom = boardGrid[4][0];
-var timerDrop = 0;
-var timerEmpty = 700;
 var timerIncrement = 0;
 
-// var str1 = "Hello";
-// var str2 = 1;
-// var res = str1.concat(str2);
-// undefined
-// res
-// "Hello1"
-
-function boxDrop() {
-    var box = num.concat(r);
-    $(box).css("background-color","rgb(250, 0, 0)");
-    console.log("box drop");
-    console.log(box);
-}
 function boxEmpty(box) {
-    var box = num.concat(r);
-    $(box).css("background-color","rgb(0, 0, 0)");
+    var boxNumber = num.concat(r+1);
+    console.log(boxNumber);
+    $('#num'+r).css("background-color","rgb(0, 0, 0)");
     console.log("box empty");
-    console.log(box);
+}
+function boxDrop() {
+    r = r + 1;
+    var boxNumber = num.concat(r+1);
+    $('#num'+r).css("background-color","rgb(250, 0, 0)");
+    console.log("box drop");
 }
 function boxLoop() {
       boxEmpty();
@@ -43,11 +33,9 @@ function boxLoop() {
 }
 function boxDelay() {
   while (limit<5) {
-    box = num.concat(r);
     limit = limit + 1;
     setTimeout(function() {
       boxLoop();
-      r = r + 1;
     }
       , timerIncrement);
     timerIncrement = timerIncrement + 700;
