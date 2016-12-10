@@ -1,3 +1,40 @@
+/////////////////////////// Friday Dec 8th --- Stage 1 //////////////////////////////
+------------------------------------------
+ASSUMING A BOARD GRID OF 5 ROWS, 3 COLUMNS -- test with one column
+------------------------------------------
+Create array of row arrays that index each grid Id by $('#Id')
+
+var row = grid[0];
+var col = grid.row[0];
+
+function dropBox {
+  While (boxBelow==false || boxStatus < 5) {
+
+    (DROP A BOX)
+
+    var boxStatus = 0
+
+    $(var row and var col) = ".active";
+
+    delayStatus = function emptyBox({
+        class=".inactive";
+        var row += 1;
+        var boxStatus += 1;
+      }, 700)
+
+  }
+}
+
+
+
+
+
+
+
+
+
+/////////////////////////// Thursday Dec 8th --- Initial Design //////////////////////////////
+
 //////////   box drop function   //////////
 //////////   3 columns, 4 rows   //////////
 function {

@@ -7,9 +7,10 @@ var boardGrid = [
   [$('#num4')],
   [$('#num5')],
 ]
-
-var dropInit = boardGrid[0][0]
+var r = 0;
 var box;
+//var currentBox = boardGrid[r][0];
+var boardBottom = boardGrid[4][0];
 var boxStatus = 0;
 var timerDrop = 0;
 var timerEmpty = 700;
@@ -42,15 +43,23 @@ function boxEmpty() {
 
 function boxLoop() {
       while (/*boxBelow==false || */boxStatus<5) {
+        currentBox = boardGrid[r][0];
+        if (currentBox!==boardBottom) {
           setTimeout(function(){
             boxDrop();
           }, timerDrop);
           setTimeout(function(){
             boxEmpty();
           }, timerEmpty);
-            boxStatus ++;
+            //boxStatus ++;
+            r = r+1;
             timerDrop = timerDrop + 1400;
             timerEmpty = timerEmpty + 1400;
+            //currentBox = currentBox[r+1][0];
+        } else {
+          console.log('check bottom of board!');
+          return;
+        }
       }
       //
       // delayStatus = function emptyBox({
