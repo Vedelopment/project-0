@@ -9,6 +9,7 @@ var boardGrid = [
 ]
 var r = 0;
 var box;
+var limit = 0;
 //var currentBox = boardGrid[r][0];
 var boardBottom = boardGrid[4][0];
 var boxStatus = 0;
@@ -28,46 +29,56 @@ function addRowNum(i) {
 }
 
 function boxDrop() {
-    $("#num1").css("background-color","rgb(250, 0, 0)");
+    //$("#num1").css("background-color","rgb(250, 0, 0)");
+    num1.classList.add("active");
     console.log("box drop");
 }
 
 function boxEmpty() {
     //myVar = setTimeout(
             //function boxEmpty() {
-            $("#num1").css("background-color","rgb(0, 0, 0)");
+            //$("#num1").css("background-color","rgb(0, 0, 0)");
+            num1.classList.remove("active");
             console.log("box empty");
             //}
           //, 700);
 }
-
 function boxLoop() {
-      while (/*boxBelow==false || */boxStatus<5) {
-        currentBox = boardGrid[r][0];
-        if (currentBox!==boardBottom) {
-          setTimeout(function(){
-            boxDrop();
-          }, timerDrop);
-          setTimeout(function(){
-            boxEmpty();
-          }, timerEmpty);
-            //boxStatus ++;
-            r = r+1;
-            timerDrop = timerDrop + 1400;
-            timerEmpty = timerEmpty + 1400;
-            //currentBox = currentBox[r+1][0];
-        } else {
-          console.log('check bottom of board!');
-          return;
-        }
-      }
-      //
-      // delayStatus = function emptyBox({
-      //   box = document.getElementById('#num1');
-      //   box.style.backgroundColor = "rgb(0, 0, 0)";
-      //   addRowNum();
-      //   }, 700)
+  while (/*boxBelow==false || */boxStatus<5) {
+    currentBox = boardGrid[r][0];
+    limit = 0;
+    l = 0;
+    if (currentBox!==boardBottom) {
+      setTimeout(function(){
+        boxDrop();
+      }, timerDrop);
+      setTimeout(function(){
+        boxEmpty();
+      }, timerEmpty);
+        l = l + 1;
+        r = r+1;
+        timerDrop = timerDrop + 1400;
+        timerEmpty = timerEmpty + 1400;
+        //currentBox = currentBox[r+1][0];
+        console.log(r);
+    } else {
+      setTimeout(function(){
+        console.log('check bottom of board!');
+      }, timerDrop);
+      return;
     }
+  }
+}
+// function playLoop() {
+//     if (r%5=0 && limit<50){
+//     currentBox = boardGrid[+1][0];
+//     currentBox = boardGrid[r][0];
+//     boxLoop();
+//   } else {
+//     console.log(l);
+//     return
+//   }
+// }
 
 $(document).on("ready", function() {
 

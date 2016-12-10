@@ -3,6 +3,9 @@ body {
   text-align: center;
 
 }
+.active {
+  background-image: url('DogTetrisOne100px.jpg');
+}
 .board-container {
   margin: 20px auto;
   height: 500px;
