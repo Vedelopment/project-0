@@ -32,7 +32,7 @@ function boxLoop() {
       boxDrop();
 }
 function boxDelay() {
-  while (limit<5) {
+  while (limit<=5) {
     limit = limit + 1;
     setTimeout(function() {
       boxLoop();
