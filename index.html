@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 
     <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -26,19 +26,44 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
   </head>
-  <body>
-    <h1>Save the Enterprise!!</H1>
+  <body id="explodeShip">
+    <!-- <div id="explodeShip" class="nothing-left"></div> -->
+    <div id="redAlert" class="red-alert ship-status"></div>
 
-    <button class="start">Quick, call Spot!!</button>
-    <p class="speech kirk">Bones! It .... seems .... like .... I've .... forgottenmypassword. Theship ..... is ..... goingtoexplode ...... anysecond! Help me remember my password!!"</p>
-    <p class="speech bones">I'm a doctor dammit, not I.T. support!</p>
-    <p class="speech crew">I'm not a featured cast member, how would I know? I'm nearly a red shirt</p>
-    <p class="speech majel">Did you know I'm the voice of the computer and Deanna's mother on all future series? I eventually get dialogue!</p>
-    <p class="spot-bubble">Logic dictates the captain will have used a password with four words, most likely the four words CRUD stands for, so you can make the most logical requests with AJAX!</p>
-    <div class="spock-dog"></div>
-    <div class="communicator"></div>
+    <h1 clas="ship-status">Save the Enterprise!!</H1>
+
+    <form>
+      <input type="password" id="wordOne" class="pass-one ship-status">
+    </form>
+
+    <form>
+      <input type="password" id="wordTwo" class="pass-two ship-status">
+    </form>
+
+    <form>
+      <input type="password" id="wordThree" class="pass-three ship-status">
+    </form>
+
+    <form>
+      <input type="password" id="wordFour" class="pass-four ship-status">
+    </form>
+
+    <button class="start ship-status">Quick, call Spot!!</button>
+    <button class="stop-flash anim-three audio-level ship-status">Turn it down!</button>
+
+    <p class="speech kirk ship-status">Bones! It .... seems .... I've .... forgottenmypassword. Theship ..... is ..... goingtoexplode ...... anysecond!<br>Help me .... remember my password!!"</p>
+    <p class="speech bones ship-status">I'm a doctor dammit, not I.T. support!</p>
+    <p class="speech crew ship-status">I'm not a featured cast member, how would I know? I'm nearly a red shirt</p>
+    <p class="speech majel ship-status">Did you know I'm the voice of the computer and Deanna's mother on all future series? I eventually get dialogue!</p>
+    <p class="spot-bubble anim-three ship-status">Logic dictates the captain will have used a password with four words, most likely the four words CRUD stands for, so he can make the most logical requests with AJAX!</p>
+    <div class="spock-dog ship-status"></div>
+    <div class="communicator ship-status"></div>
     <!-- Audio Files -->
-    <audio id="comId" src="http://www.trekcore.com/audio/communicator/ent_communicator1.mp3" type="audio/mpeg"></audio>
+    <audio id="comMpeg" src="http://www.trekcore.com/audio/communicator/ent_communicator1.mp3" type="audio/mpeg"></audio>
+    <audio id="bridgeMpeg" src="http://www.trekcore.com/audio/background/tos_bridge_season_3.mp3" type="audio/mpeg"></audio>
+    <audio id="redAlertMpeg" src="http://www.trekcore.com/audio/redalertandklaxons/tos_red_alert.mp3" type="audio/mpeg"></audio>
+    <audio id="explodeMpeg" src="http://www.trekcore.com/audio/explosions/largeexplosion2.mp3" type="audio/mpeg"></audio>
+    <audio id="transportMpeg" src="assets/audio/transport-short.wav" type="audio/wav"></audio>
 
     <!-- <input type="input" id="whichkey" placeholder="try a key!">
     <p>Try to figure out which two keys will fill the basket with puppies! Press slowly! If you find one that drops a puppy in the basket, wait until it's safely asleep before trying again.</p>

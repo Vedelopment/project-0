@@ -1,9 +1,13 @@
 html {
   height: 100%;
-  color: black;
+  cursor: url('cursorsmall.png'), default;
 }
 h1 {
   color: rgba(250,250,0,.8);
+  position: absolute;
+  top: 0;
+  margin: 0;
+  left: 15%;
   font-size: 80px;
   font-family: 'Bungee', cursive;
 }
@@ -16,6 +20,62 @@ body {
   position: relative;
   overflow: hidden;
 }
+.red-alert {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  background-color: rgba(250,0,0,.4);
+  width: 100%;
+  height: 100%;
+  transition: 1s ease;
+}
+.nothing-left {
+  opacity: 0;
+  /*background-color: rgba(250,250,250,1);
+  width: 100%;
+  height: 100%;*/
+  transition: 1s ease;
+}
+input {
+  color: red;
+  /*height: 60px;*/
+  width: 180px;
+  position: absolute;
+  font-size: 36px;
+  text-align: center;
+  border: 5px solid red;
+  border-radius: 7px;
+  opacity: .7;
+  background-color: black;
+  transition: 0.5s ease;
+}
+.pass-one {
+  top: 150%;
+  left: 15%;
+}
+.pass-two {
+  top: 150%;
+  left: 34%;
+}
+.pass-three {
+  top: 150%;
+  left: 54%;
+}
+.pass-four {
+  top: 150%;
+  left: 74%;
+}
+.communicator {
+  background-image: url('../imgs/com.png');
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  bottom: -500px;
+  left: 72%;
+  transition: 0.7s ease;
+}
 .spock-dog {
   background-image: url('../imgs/spockdogbig.png');
   height: 500px;
@@ -23,12 +83,13 @@ body {
   position: absolute;
   bottom: -1000px;
   left: 9%;
-  transition: 0.7s ease;
+  transition: 0.5s ease;
 }
 .hello-spock {
   bottom: 0;
 }
 .speech {
+  opacity: 1;
   position: absolute;
   max-width: 250px;
   border-radius: 10px;
@@ -36,8 +97,10 @@ body {
   font-size: 14px;
   padding: 8px;
   font-family: 'Bungee', cursive;
+  transition: .7s ease;
 }
 .kirk {
+  opacity: 1;
   background-color: rgba(250,250,20,.9);
   left: 53%;
   top: 60%;
@@ -45,6 +108,7 @@ body {
   /*word-wrap: break-word;*/
 }
 .bones {
+  top: 15%;
   right: 1%;
 }
 .majel {
@@ -71,37 +135,39 @@ body {
   top: 30%;
   left: 3%;
 }
-.communicator {
-  background-image: url('../imgs/com.png');
-  background-repeat: no-repeat;
-  height: 500px;
-  width: 500px;
-  position: absolute;
-  bottom: -500px;
-  left: 72%;
-  transition: 0.7s ease;
-}
 .call-spot {
   bottom: 0;
 }
 button {
+  font-size: 17px;
   background-color: rgba(250,250,0,.9);
   position: absolute;
+  font-family: 'Bungee', cursive;
+  transition: 0.7s ease;
+  cursor: url('cursorsmall.png'), default;
+}
+.start {
   bottom: 8%;
   right: 10%;
   font-size: 18px;
-  font-family: 'Bungee', cursive;
-  transition: 0.7s ease;
+}
+.stop-flash {
+  opacity: 0;
+  bottom: 7%;
+  left: 1%;
 }
 .button-be-gone {
   position: absolute;
   right: -100%;
 }
 .appear {
-  opacity: .9;
-  transition: .7s ease;
+  opacity: 1;
+  transition: .6s ease;
 }
-.clear {
+.disappear {
   opacity: 0;
   transition: .7s ease;
+}
+.show-pass {
+  top: 17%;
 }
