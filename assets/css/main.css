@@ -1,43 +1,107 @@
+html {
+  height: 100%;
+  color: black;
+}
+h1 {
+  color: rgba(250,250,0,.8);
+  font-size: 80px;
+  font-family: 'Bungee', cursive;
+}
 body {
-  background-color: rgb(70, 252, 249);
+  background-image: url('../imgs/bridge.jpg');
+  background-size: cover;
   text-align: center;
-
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
-.active {
-  background-image: url('DogTetrisOne100px.jpg');
-}
-.board-container {
-  margin: 20px auto;
+.spock-dog {
+  background-image: url('../imgs/spockdogbig.png');
   height: 500px;
-  width: 100px;
-  background-color: rgb(0, 0, 0);
+  width: 500px;
+  position: absolute;
+  bottom: -1000px;
+  left: 9%;
+  transition: 0.7s ease;
 }
-.col1 {
-  /*height: 100px;
-  width: 100px;*/
+.hello-spock {
+  bottom: 0;
 }
-#num1 {
-  background-color: rgb(0, 0, 0);
-  height: 100px;
-  width: 100px;
+.speech {
+  position: absolute;
+  max-width: 250px;
+  border-radius: 10px;
+  background-color: rgba(250,250,0,.8);
+  font-size: 14px;
+  padding: 8px;
+  font-family: 'Bungee', cursive;
 }
-#num2 {
-  background-color: rgb(0, 0, 0);
-  height: 100px;
-  width: 100px;
+.kirk {
+  background-color: rgba(250,250,20,.9);
+  left: 53%;
+  top: 60%;
+  font-size: 17px;
+  /*word-wrap: break-word;*/
 }
-#num3 {
-  background-color: rgb(0, 0, 0);
-  height: 100px;
-  width: 100px;
+.bones {
+  right: 1%;
 }
-#num4 {
-  background-color: rgb(0, 0, 0);
-  height: 100px;
-  width: 100px;
+.majel {
+  background-color: rgba(250,250,0,.5);
+  left: 39%;
+  top: 15%;
+  font-size: 11px;
 }
-#num5 {
-  background-color: rgb(0, 0, 0);
-  height: 100px;
-  width: 100px;
+.crew{
+  background-color: rgba(250,250,0,.5);
+  left: 5%;
+  top: 18%;
+  font-size: 12px;
+}
+.spot-bubble {
+  opacity: 0;
+  position: absolute;
+  max-width: 210px;
+  border-radius: 10px;
+  background-color: rgba(250,250,0,.9);
+  font-size: 19px;
+  padding: 8px;
+  font-family: 'Bungee', cursive;
+  top: 30%;
+  left: 3%;
+}
+.communicator {
+  background-image: url('../imgs/com.png');
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  bottom: -500px;
+  left: 72%;
+  transition: 0.7s ease;
+}
+.call-spot {
+  bottom: 0;
+}
+button {
+  background-color: rgba(250,250,0,.9);
+  position: absolute;
+  bottom: 8%;
+  right: 10%;
+  font-size: 18px;
+  font-family: 'Bungee', cursive;
+  transition: 0.7s ease;
+}
+.button-be-gone {
+  position: absolute;
+  right: -100%;
+}
+.appear {
+  opacity: .9;
+  transition: .7s ease;
+}
+.clear {
+  opacity: 0;
+  transition: .7s ease;
 }
