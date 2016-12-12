@@ -1,0 +1,193 @@
+html {
+  height: 100%;
+  cursor: url('cursorsmall.png'), default;
+}
+h1 {
+  color: rgba(250,250,0,.8);
+  position: absolute;
+  text-align: center;
+  top: 0;
+  margin: 0;
+  left: 15%;
+  font-size: 80px;
+  font-family: 'Bungee', cursive;
+}
+body {
+  margin: 0;
+}
+body {
+  background-image: url('../imgs/bridge.jpg');
+  background-size: cover;
+  text-align: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.win {
+  background-image: url('../imgs/ship.jpg');
+  background-size: cover;
+  text-align: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: .8s ease;
+}
+#reload {
+  visibility: hidden;
+  height: 100px;
+  width: 600px;
+  font-size: 60px;
+  top: 40%;
+  left: 28%;
+}
+.red-alert {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  background-color: rgba(250,0,0,.4);
+  width: 100%;
+  height: 100%;
+  transition: 1s ease;
+}
+.nothing-left {
+  opacity: 0;
+  transition: 1s ease;
+}
+input {
+  color: red;
+  width: 180px;
+  position: absolute;
+  font-size: 36px;
+  text-align: center;
+  border: 5px solid red;
+  border-radius: 7px;
+  opacity: .7;
+  background-color: black;
+  transition: 0.5s ease;
+}
+.pass-one {
+  top: 150%;
+  left: 15%;
+}
+.pass-two {
+  top: 150%;
+  left: 34%;
+}
+.pass-three {
+  top: 150%;
+  left: 54%;
+}
+.pass-four {
+  top: 150%;
+  left: 74%;
+}
+.communicator {
+  background-image: url('../imgs/com.png');
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  bottom: -500px;
+  left: 72%;
+  transition: 0.7s ease;
+}
+.spock-dog {
+  background-image: url('../imgs/spockdogbig.png');
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  bottom: -1000px;
+  left: 9%;
+  transition: 0.5s ease;
+}
+.hello-spock {
+  bottom: 0;
+}
+.speech {
+  opacity: 1;
+  position: absolute;
+  max-width: 250px;
+  border-radius: 10px;
+  background-color: rgba(250,250,0,.8);
+  font-size: 14px;
+  padding: 8px;
+  font-family: 'Bungee', cursive;
+  transition: .7s ease;
+}
+.kirk {
+  opacity: 1;
+  background-color: rgba(250,250,20,.9);
+  left: 53%;
+  top: 60%;
+  font-size: 17px;
+  /*word-wrap: break-word;*/
+}
+.bones {
+  top: 15%;
+  right: 1%;
+}
+.majel {
+  background-color: rgba(250,250,0,.5);
+  left: 39%;
+  top: 15%;
+  font-size: 11px;
+}
+.crew{
+  background-color: rgba(250,250,0,.5);
+  left: 5%;
+  top: 18%;
+  font-size: 12px;
+}
+.spot-bubble {
+  opacity: 0;
+  position: absolute;
+  max-width: 210px;
+  border-radius: 10px;
+  background-color: rgba(250,250,0,.9);
+  font-size: 19px;
+  padding: 8px;
+  font-family: 'Bungee', cursive;
+  top: 30%;
+  left: 3%;
+}
+.call-spot {
+  bottom: 0;
+}
+button {
+  font-size: 17px;
+  background-color: rgba(250,250,0,.9);
+  border: 3px solid black;
+  border-radius: 3px;
+  position: absolute;
+  font-family: 'Bungee', cursive;
+  transition: 0.7s ease;
+  cursor: url('cursorsmall.png'), default;
+}
+.start {
+  bottom: 8%;
+  right: 10%;
+  font-size: 18px;
+}
+.stop-flash {
+  opacity: 0;
+  bottom: 7%;
+  left: 1%;
+}
+.button-be-gone {
+  position: absolute;
+  right: -100%;
+}
+.appear {
+  opacity: 1;
+  transition: .6s ease;
+}
+.disappear {
+  opacity: 0;
+  transition: .7s ease;
+}
+.show-pass {
+  top: 17%;
+}

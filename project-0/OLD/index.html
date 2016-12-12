@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOGPILE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.2.min.js"></script>
+
+    <!-- Google Maps API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
+
+    <!-- Handlebars -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+  </head>
+  <body>
+    <h1>DOGPILE</H1>
+      <button id="start">Start!</button>
+        <div class="board-container">
+          <div class="no-gutter col-xs-6">
+            <div id="num1" class="inline row1"></div>
+            <div id="num2" class="inline row2"></div>
+            <div id="num3" class="inline row3"></div>
+            <div id="num4" class="inline row4"></div>
+            <div id="num5" class="inline row5"></div>
+          </div>
+          <div class="no-gutter col-xs-6">
+            <div id="num11" class="inline row1"></div>
+            <div id="num12" class="inline row2"></div>
+            <div id="num13" class="inline row3"></div>
+            <div id="num14" class="inline row4"></div>
+            <div id="num15" class="inline row5"></div>
+          </div>
+        </div>
+
+        <input type="input" id="whichkey" placeholder="try a key!">
+        <p>Try to figure out which two keys will fill the basket with puppies! Press slowly! If you find one that drops a puppy in the basket, wait until it's safely asleep before trying again.</p>
+        <div id="log"></div>
+
+  </body>
+</html>
