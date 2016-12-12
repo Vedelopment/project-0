@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>DOGPILE</title>
+    <title>Save the Enterprise!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Font -->
@@ -26,48 +26,47 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
   </head>
-  <body id="explodeShip">
-    <!-- <div id="explodeShip" class="nothing-left"></div> -->
-    <div id="redAlert" class="red-alert ship-status"></div>
 
-    <h1 clas="ship-status">Save the Enterprise!!</H1>
+  <body>
+    <button id="reload">Reincarnate?</button>
 
-    <form>
-      <input type="password" id="wordOne" class="pass-one ship-status">
-    </form>
+    <div id="ship">
+      <div id="redAlert" class="red-alert ship-status"></div>
+      <h1 clas="ship-status">Save the Enterprise!!</H1>
 
-    <form>
-      <input type="password" id="wordTwo" class="pass-two ship-status">
-    </form>
+      <form>
+        <input type="password" id="wordOne" class="pass-one ship-status">
+      </form>
+      <form>
+        <input type="password" id="wordTwo" class="pass-two ship-status">
+      </form>
+      <form>
+        <input type="password" id="wordThree" class="pass-three ship-status">
+      </form>
+      <form>
+        <input type="password" id="wordFour" class="pass-four ship-status">
+      </form>
 
-    <form>
-      <input type="password" id="wordThree" class="pass-three ship-status">
-    </form>
+      <button class="start ship-status">Quick, call Spot!!</button>
+      <button class="stop-flash anim-three audio-level ship-status">Turn it down!</button>
 
-    <form>
-      <input type="password" id="wordFour" class="pass-four ship-status">
-    </form>
+      <p class="speech kirk ship-status">Bones! It .... seems .... I've .... forgottenmypassword. Theship ..... is ..... goingtoexplode ...... anysecond!<br>Help me .... remember my password!!"</p>
+      <p class="speech bones ship-status">I'm a doctor dammit, not I.T. support!</p>
+      <p class="speech crew ship-status">I'm not a featured cast member, how would I know? I'm nearly a red shirt</p>
+      <p class="speech majel ship-status">Did you know I'm the voice of the computer and Deanna's mother on all future series? I eventually get dialogue!</p>
+      <p class="spot-bubble anim-three ship-status">Logic dictates the captain will have used a password with four words, most likely the four words CRUD stands for, so he can make the most logical requests with AJAX!</p>
+      <div class="spock-dog ship-status"></div>
+      <div class="communicator ship-status"></div>
+      <!-- Audio Files -->
+      <audio id="comMpeg" src="http://www.trekcore.com/audio/communicator/ent_communicator1.mp3" type="audio/mpeg"></audio>
+      <audio id="bridgeMpeg" src="http://www.trekcore.com/audio/background/tos_bridge_season_3.mp3" type="audio/mpeg"></audio>
+      <audio id="redAlertMpeg" src="http://www.trekcore.com/audio/redalertandklaxons/tos_red_alert.mp3" type="audio/mpeg"></audio>
+      <audio id="explodeMpeg" src="http://www.trekcore.com/audio/explosions/largeexplosion2.mp3" type="audio/mpeg"></audio>
+      <audio id="transportMpeg" src="assets/audio/transport-short.wav" type="audio/wav"></audio>
 
-    <button class="start ship-status">Quick, call Spot!!</button>
-    <button class="stop-flash anim-three audio-level ship-status">Turn it down!</button>
-
-    <p class="speech kirk ship-status">Bones! It .... seems .... I've .... forgottenmypassword. Theship ..... is ..... goingtoexplode ...... anysecond!<br>Help me .... remember my password!!"</p>
-    <p class="speech bones ship-status">I'm a doctor dammit, not I.T. support!</p>
-    <p class="speech crew ship-status">I'm not a featured cast member, how would I know? I'm nearly a red shirt</p>
-    <p class="speech majel ship-status">Did you know I'm the voice of the computer and Deanna's mother on all future series? I eventually get dialogue!</p>
-    <p class="spot-bubble anim-three ship-status">Logic dictates the captain will have used a password with four words, most likely the four words CRUD stands for, so he can make the most logical requests with AJAX!</p>
-    <div class="spock-dog ship-status"></div>
-    <div class="communicator ship-status"></div>
-    <!-- Audio Files -->
-    <audio id="comMpeg" src="http://www.trekcore.com/audio/communicator/ent_communicator1.mp3" type="audio/mpeg"></audio>
-    <audio id="bridgeMpeg" src="http://www.trekcore.com/audio/background/tos_bridge_season_3.mp3" type="audio/mpeg"></audio>
-    <audio id="redAlertMpeg" src="http://www.trekcore.com/audio/redalertandklaxons/tos_red_alert.mp3" type="audio/mpeg"></audio>
-    <audio id="explodeMpeg" src="http://www.trekcore.com/audio/explosions/largeexplosion2.mp3" type="audio/mpeg"></audio>
-    <audio id="transportMpeg" src="assets/audio/transport-short.wav" type="audio/wav"></audio>
-
-    <!-- <input type="input" id="whichkey" placeholder="try a key!">
-    <p>Try to figure out which two keys will fill the basket with puppies! Press slowly! If you find one that drops a puppy in the basket, wait until it's safely asleep before trying again.</p>
-    <div id="log"></div> -->
-
+      <!-- <input type="input" id="whichkey" placeholder="try a key!">
+      <p>Try to figure out which two keys will fill the basket with puppies! Press slowly! If you find one that drops a puppy in the basket, wait until it's safely asleep before trying again.</p>
+      <div id="log"></div> -->
+    </div>
   </body>
 </html>

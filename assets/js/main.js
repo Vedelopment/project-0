@@ -1,8 +1,5 @@
 console.log("sanity check!");
 ////////////////////////////////////////////////////////////////////////////////
-function sanityCheck() {
-  console.log('sanity check');
-}
   $(document).on("ready", function() {
 
     var comAudio = document.getElementById("comMpeg");
@@ -11,6 +8,10 @@ function sanityCheck() {
     var shipExplodeAudio = document.getElementById("explodeMpeg");
     var transportAudio = document.getElementById("transportMpeg");
 
+    ///////////////////////////////////////////////////////////
+    //////////////////////   MAJOR EVENTS   ///////////////////
+    ///////////////////////////////////////////////////////////
+
     pageLoad();
 
     function pageLoad() {
@@ -18,17 +19,47 @@ function sanityCheck() {
       playBridge();
     }
 
+    function checkForWin() {
+      console.log(save);
+      if (save>=3) {
+        alert('you saved the day!');
+      } else {
+        console.log('keep trying...');
+      }
+    }
+
     function shipExplodeTimer() {
       appearKirk = setTimeout(shipExplode, 60000);
     }
+
+    // function gameOver() {
+    //
+    // }
+    //
+    // function youWon() {
+    //   // playWin();
+    //   explodeDelay = setTimeout(function() {
+    //     $('.ship').addClass('nothing-left');
+    //     $('body').css('background-image', 'none');
+    //     $('p').addClass('nothing-left');
+    //     $('div').addClass('nothing-left');
+    //     $('#reload').css('visibility', 'visible');
+    //     bridgeAudio.pause();
+    //     redAlertAudio.pause();
+    //   }, 100);
+    // }
 
     function shipExplode() {
       // var shipStatus = document.getElementsByClassName("ship-status");
       playShipExplode();
       explodeDelay = setTimeout(function() {
-        $('.ship-status').addClass('nothing-left');
+        $('.ship').addClass('nothing-left');
+        $('body').css('background-image', 'none');
         $('p').addClass('nothing-left');
         $('div').addClass('nothing-left');
+        $('#reload').css('visibility', 'visible');
+        bridgeAudio.pause();
+        redAlertAudio.pause();
       }, 100);
     }
 
@@ -41,6 +72,16 @@ function sanityCheck() {
       console.log(kirkText);
       kirkText.style.opacity = kirkText.style.opacity == 0 ? 1 : 0;
     }
+
+    ///////////////////////////////////////////////////////////
+    ////////////////////   EVENT HANDLERS   ///////////////////
+    ///////////////////////////////////////////////////////////
+
+    $('.start').on("click", function() {
+      $('.start').addClass('button-be-gone');
+      $('.communicator').addClass('call-spot');
+      playCom();
+    })
 
     $('.communicator').on("click", function() {
       $('.spock-dog').addClass('hello-spock');
@@ -56,10 +97,8 @@ function sanityCheck() {
       //setTimeout(selfDestruct, 60000);
     })
 
-    $('.start').on("click", function() {
-      $('button').addClass('button-be-gone');
-      $('.communicator').addClass('call-spot');
-      playCom();
+    $('#reload').click(function() {
+      location.reload(true);
     })
 
     $('.audio-level').on("click", function() {
@@ -67,6 +106,10 @@ function sanityCheck() {
       bridgeAudio.volume = 0.02;
 
     })
+
+    ///////////////////////////////////////////////////////////
+    ///////////////////   STYLE FUNCTIONS   ///////////////////
+    ///////////////////////////////////////////////////////////
 
     function redAlert() {
       flashRate = setInterval(flashRed, 960);
@@ -81,7 +124,9 @@ function sanityCheck() {
       clearInterval(nIntervId);
     }
 
-    ///////////////////   AUDIO   ///////////////////
+    ///////////////////////////////////////////////////////////
+    ////////////////////  AUDIO FUNCTIONS   ///////////////////
+    ///////////////////////////////////////////////////////////
 
     function playCom() {
       comAudio.play();
@@ -119,59 +164,59 @@ function sanityCheck() {
       checkWordOne();
     })
     ///////////////   PASSWORD ONE   ///////////////////
-    function checkWordTwo() {
+    function checkWordOne() {
       var wordOneText = $('#wordOne').val();
       console.log(wordOneText);
       if(wordOneText !== 'create') {
           alert("The password you have entered is not valid!");
+          $('#wordOne').val('');
 
       } else {
-        $('#wordOne').val('');
+        checkForWin();
         document.getElementById('wordTwo').focus();
         save = save + 1;
-        console.log(save);
       }
     }
     ///////////////   PASSWORD TWO   ///////////////////
-    function checkWordOne() {
-      var wordOneText = $('#wordTwo').val();
+    function checkWordTwo() {
+      var wordTwoText = $('#wordTwo').val();
       console.log(wordTwoText);
-      if(wordTwoText !== 'create') {
+      if(wordTwoText !== 'read') {
           alert("The password you have entered is not valid!");
+          $('#wordTwo').val('');
 
       } else {
-        $('#wordTwo').val('');
-        document.getElementById('wordTwo').focus();
+        checkForWin();
+        document.getElementById('wordThree').focus();
         save = save + 1;
-        console.log(save);
       }
     }
     ///////////////   PASSWORD THREE   ///////////////////
-    function checkWordOne() {
-      var wordOneText = $('#wordOne').val();
-      console.log(wordOneText);
-      if(wordOneText !== 'create') {
+    function checkWordThree() {
+      var wordThreeText = $('#wordThree').val();
+      console.log(wordThreeText);
+      if(wordThreeText !== 'update') {
           alert("The password you have entered is not valid!");
+          $('#wordThree').val('');
 
       } else {
-        $('#wordOne').val('');
-        document.getElementById('wordTwo').focus();
+        checkForWin();
+        document.getElementById('wordFour').focus();
         save = save + 1;
-        console.log(save);
       }
     }
     ///////////////   PASSWORD FOUR   ///////////////////
-    function checkWordOne() {
-      var wordOneText = $('#wordOne').val();
-      console.log(wordOneText);
-      if(wordOneText !== 'create') {
+    function checkWordFour() {
+      var wordOneText = $('#wordFour').val();
+      console.log(wordFourText);
+      if(wordFourText !== 'delete') {
           alert("The password you have entered is not valid!");
 
       } else {
-        $('#wordOne').val('');
-        document.getElementById('wordTwo').focus();
+        checkForWin();
+        $('#wordFour').val('');
+        // document.getElementById('wordTwo').focus();
         save = save + 1;
-        console.log(save);
       }
     }
 
