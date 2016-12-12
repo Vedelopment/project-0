@@ -38,7 +38,6 @@ console.log("sanity check!");
         $('input').removeClass('show-pass');
         $('.communicator').removeClass('call-spot');
         $('body').addClass('win')
-        // alert('you saved the day!');
       } else {
         console.log('keep trying...');
       }
@@ -90,9 +89,14 @@ console.log("sanity check!");
       redAlert();
       playRedAlert();
       shipExplodeTimer();
-      // document.getElementById('passOne').focus();
+      document.getElementById('passOne').focus();
       bridgeAudio.volume = 0.03;
     })
+
+      passOne.onfocus = function () {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+    }
 
     $('#reload').click(function() {
       location.reload(true);
