@@ -7,6 +7,10 @@ console.log("sanity check!");
     var redAlertAudio = document.getElementById("redAlertMpeg");
     var shipExplodeAudio = document.getElementById("explodeMpeg");
     var transportAudio = document.getElementById("transportMpeg");
+    var illogicalAudio = document.getElementById("illogicalMpeg");
+    var prosperAudio = document.getElementById("prosperMpeg");
+    var themeAudio = document.getElementById("themeMpeg");
+    var flyAudio = document.getElementById("flyMpeg");
 
     ///////////////////////////////////////////////////////////
     //////////////////////   MAJOR EVENTS   ///////////////////
@@ -15,44 +19,36 @@ console.log("sanity check!");
     pageLoad();
 
     function pageLoad() {
-      kirkTalk();
+      // kirkTalk();
       playBridge();
     }
 
     function checkForWin() {
-      console.log(save);
       if (save>=3) {
         window.clearTimeout(explodeTimer);
         redAlertAudio.pause();
-        alert('you saved the day!');
+        bridgeAudio.pause();
+        stopRedAlert();
+        playProsper();
+        playTheme();
+        playFly();
+        $('h1').text('Live Long and Prosper!!');
+        $('.spock-dog').removeClass('hello-spock');
+        $('.anim-three').removeClass('appear');
+        $('input').removeClass('show-pass');
+        $('.communicator').removeClass('call-spot');
+        $('body').addClass('win')
+        // alert('you saved the day!');
       } else {
         console.log('keep trying...');
       }
     }
 
     function shipExplodeTimer() {
-      explodeTimer = setTimeout(shipExplode, 60000);
+      explodeTimer = setTimeout(shipExplode, 80000);
     }
 
-    // function gameOver() {
-    //
-    // }
-    //
-    // function youWon() {
-    //   // playWin();
-    //   explodeDelay = setTimeout(function() {
-    //     $('.ship').addClass('nothing-left');
-    //     $('body').css('background-image', 'none');
-    //     $('p').addClass('nothing-left');
-    //     $('div').addClass('nothing-left');
-    //     $('#reload').css('visibility', 'visible');
-    //     bridgeAudio.pause();
-    //     redAlertAudio.pause();
-    //   }, 100);
-    // }
-
     function shipExplode() {
-      // var shipStatus = document.getElementsByClassName("ship-status");
       playShipExplode();
       explodeDelay = setTimeout(function() {
         $('.ship').addClass('nothing-left');
@@ -62,19 +58,18 @@ console.log("sanity check!");
         $('#reload').css('visibility', 'visible');
         bridgeAudio.pause();
         redAlertAudio.pause();
-        bridgeAudio.volume = 0.5;
       }, 100);
     }
 
-    function kirkTalk() {
-      appearKirk = setTimeout(kirkBubbleShow, 1500);
-    }
-
-    function kirkBubbleShow() {
-      var  kirkText = document.getElementsByClassName('kirk');
-      console.log(kirkText);
-      kirkText.style.opacity = kirkText.style.opacity == 0 ? 1 : 0;
-    }
+    // function kirkTalk() {
+    //   appearKirk = setTimeout(kirkBubbleShow, 1500);
+    // }
+    //
+    // function kirkBubbleShow() {
+    //   var  kirkText = document.getElementsByClassName('kirk');
+    //   console.log(kirkText);
+    //   kirkText.style.opacity = kirkText.style.opacity == 0 ? 1 : 0;
+    // }
 
     ///////////////////////////////////////////////////////////
     ////////////////////   EVENT HANDLERS   ///////////////////
@@ -95,9 +90,8 @@ console.log("sanity check!");
       redAlert();
       playRedAlert();
       shipExplodeTimer();
-      document.getElementById('passOne').focus();
+      // document.getElementById('passOne').focus();
       bridgeAudio.volume = 0.03;
-      //setTimeout(selfDestruct, 60000);
     })
 
     $('#reload').click(function() {
@@ -123,6 +117,12 @@ console.log("sanity check!");
       emergLight.style.opacity = emergLight.style.opacity == .5 ? 1 : .5;
     }
 
+    function stopRedAlert() {
+      $('#redAlert').removeClass('red-alert');
+    }
+
+
+
     ///////////////////////////////////////////////////////////
     ////////////////////  AUDIO FUNCTIONS   ///////////////////
     ///////////////////////////////////////////////////////////
@@ -132,11 +132,11 @@ console.log("sanity check!");
     }
     function playBridge() {
       bridgeAudio.play();
-      bridgeAudio.volume = 0.1;
+      bridgeAudio.volume = 0.2;
     }
     function playRedAlert() {
       redAlertAudio.play();
-      redAlertAudio.volume = 0.5;
+      redAlertAudio.volume = 0.3;
     }
     function lowerRedAlert() {
       redAlertAudio.volume = 0.2;
@@ -147,6 +147,22 @@ console.log("sanity check!");
     function playTransport() {
       transportAudio.play();
       transportAudio.volume = 0.5;
+    }
+    function playIllogical() {
+      illogicalAudio.play();
+      illogicalAudio.volume = 0.9;
+    }
+    function playProsper() {
+      prosperAudio.play();
+      prosperAudio.volume = 0.8;
+    }
+    function playTheme() {
+      themeAudio.play();
+      themeAudio.volume = 1;
+    }
+    function playFly() {
+      flyAudio.play();
+      themeAudio.volume = 1;
     }
     ///////////////////////////////////////////////////////////
     ///////////////   PASSWORD VALIDATION   ///////////////////
@@ -160,30 +176,24 @@ console.log("sanity check!");
     $('form').on("submit", function(event) {
       event.preventDefault();
       var formId = $(this).attr('id');
-      console.log(formId);
-      console.log('submitted');
       if (formId==='wordOne') {
         checkWordOne();
-        console.log('checking one');
       }
       else if (formId=='wordTwo') {
         checkWordTwo();
-        console.log('checking two');
       }
       else if (formId=='wordThree') {
         checkWordThree();
-        console.log('checking three');
       }
       else if (formId=='wordFour') {
         checkWordFour();
-        console.log('checking four');
       }
     })
     ///////////////   PASSWORD ONE   ///////////////////
     function checkWordOne() {
       var wordOneText = $('#passOne').val();
-      console.log(wordOneText);
       if(wordOneText !== 'create') {
+          playIllogical();
           alert("The password you have entered is not valid!");
           $('#passOne').val('');
 
@@ -197,10 +207,10 @@ console.log("sanity check!");
     ///////////////   PASSWORD TWO   ///////////////////
     function checkWordTwo() {
       var wordTwoText = $('#passTwo').val();
-      console.log(wordTwoText);
       if(wordTwoText !== 'read') {
           alert("The password you have entered is not valid!");
           $('#passTwo').val('');
+          playIllogical();
 
       } else {
         $("#passTwo").attr("disabled", true);
@@ -212,10 +222,10 @@ console.log("sanity check!");
     ///////////////   PASSWORD THREE   ///////////////////
     function checkWordThree() {
       var wordThreeText = $('#passThree').val();
-      console.log(wordThreeText);
       if(wordThreeText !== 'update') {
           alert("The password you have entered is not valid!");
           $('#passThree').val('');
+          playIllogical();
 
       } else {
         $("#passThree").attr("disabled", true);
@@ -227,10 +237,10 @@ console.log("sanity check!");
     ///////////////   PASSWORD FOUR   ///////////////////
     function checkWordFour() {
       var wordFourText = $('#passFour').val();
-      console.log(wordFourText);
       if(wordFourText !== 'delete') {
           alert("The password you have entered is not valid!");
           $('#passFour').val('');
+          playIllogical();
       } else {
         $("#passFour").attr("disabled", true);
         checkForWin();
