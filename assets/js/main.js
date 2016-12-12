@@ -38,13 +38,11 @@ console.log("sanity check!");
         $('input').removeClass('show-pass');
         $('.communicator').removeClass('call-spot');
         $('body').addClass('win')
-      } else {
-        console.log('keep trying...');
       }
     }
 
     function shipExplodeTimer() {
-      explodeTimer = setTimeout(shipExplode, 80000);
+      explodeTimer = setTimeout(shipExplode, 60000);
     }
 
     function shipExplode() {
@@ -59,7 +57,7 @@ console.log("sanity check!");
         redAlertAudio.pause();
       }, 100);
     }
-
+    ///////////   FUTURE TALK BUBBLE ANIMATION   ///////////////
     // function kirkTalk() {
     //   appearKirk = setTimeout(kirkBubbleShow, 1500);
     // }
@@ -124,8 +122,6 @@ console.log("sanity check!");
     function stopRedAlert() {
       $('#redAlert').removeClass('red-alert');
     }
-
-
 
     ///////////////////////////////////////////////////////////
     ////////////////////  AUDIO FUNCTIONS   ///////////////////
@@ -248,7 +244,6 @@ console.log("sanity check!");
       } else {
         $("#passFour").attr("disabled", true);
         checkForWin();
-        // document.getElementById('wordTwo').focus();
         save = save + 1;
       }
     }
@@ -258,7 +253,7 @@ console.log("sanity check!");
 //////////////////////////////// CODE IDEAS ////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 
-
+    ///////////////   FUTURE: BIND TAB TO SUBMIT FORM   ///////////////////
     // $( "#whichkey" ).on( "keydown", function( event ) {
     //   if (event.which=='38') {
     //   } else if (event.which=='40') {
