@@ -191,3 +191,6 @@ button {
 .show-pass {
   top: 17%;
 }
+.hide {
+  visibility: hidden;
+}

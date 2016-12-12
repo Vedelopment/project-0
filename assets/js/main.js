@@ -20,7 +20,7 @@ console.log("sanity check!");
 
     function pageLoad() {
       // kirkTalk();
-      // $('.speech').addClass('appear');
+      // $('.speech').removeClass('hidden');
       playBridge();
     }
 
