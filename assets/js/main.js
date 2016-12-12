@@ -43,7 +43,7 @@ console.log("sanity check!");
     }
 
     function shipExplodeTimer() {
-      explodeTimer = setTimeout(shipExplode, 60000);
+      explodeTimer = setTimeout(shipExplode, 53000);
     }
 
     function shipExplode() {
