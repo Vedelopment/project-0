@@ -34,13 +34,23 @@ body {
   overflow: hidden;
   transition: .8s ease;
 }
-#reload {
+.reload {
   visibility: hidden;
   height: 100px;
   width: 600px;
   font-size: 60px;
   top: 40%;
   left: 28%;
+  z-index: 1;
+}
+.playAgain {
+  visibility: hidden;
+  height: 70px;
+  width: 400px;
+  font-size: 30px;
+  top: 20%;
+  margin: 0 auto;
+  z-index: 1;
 }
 .red-alert {
   position: absolute;

@@ -1,5 +1,3 @@
-console.log("sanity check!");
-////////////////////////////////////////////////////////////////////////////////
   $(document).on("ready", function() {
 
     var comAudio = document.getElementById("comMpeg");
@@ -39,6 +37,7 @@ console.log("sanity check!");
         $('input').removeClass('show-pass');
         $('.communicator').removeClass('call-spot');
         $('body').addClass('win')
+        $('#playAgain').css('visibility', 'visible');
       }
     }
 
@@ -98,7 +97,11 @@ console.log("sanity check!");
     }
 
     $('#reload').click(function() {
-      location.reload(true);
+      window.location.reload();
+    })
+
+    $('#playAgain').click(function() {
+      window.location.reload();
     })
 
     $('.audio-level').on("click", function() {
